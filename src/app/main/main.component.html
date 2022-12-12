@@ -1,0 +1,425 @@
+<!--Main Navigation-->
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+            <div class="row mt-1 p-1">
+                <div class="col-9">
+                    <input autocomplete="off" type="search" class="form-control" placeholder='Customers'>
+                </div>
+                <div class="col-1">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-plus-circle"></i></button>   
+                </div>
+            </div>
+          <hr>
+    
+          <div class="list-group list-group-flush mx-3 mt-4" *ngFor="let cust of customers">
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true" (click)="getDetails(cust)"
+            >
+            <div class="row">
+                <div class="col-3">
+                    <div><span style="font-size: 30px;"><i class="bi bi-person"></i></span></div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <b>{{cust.first_name}} {{cust.last_name}}</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-4">{{cust.email}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+          </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+  
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+  
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          WEB APP
+        </a>        
+  
+        <!-- Right links -->
+        
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#">Some news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Another news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+  
+          <!-- Icon -->
+          <li class="nav-item">
+            <a class="nav-link me-3 me-lg-0" href="#">
+              <i class="fas fa-fill-drip"></i>
+            </a>
+          </li>
+          <!-- Icon -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+  
+          <!-- Icon dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="flag-united-kingdom flag m-0"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="flag-united-kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i
+                ></a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+              </li>
+            </ul>
+          </li>
+  
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                class="rounded-circle"
+                height="22"
+                alt="Avatar"
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#">My profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Settings</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+</header>
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main class="m-5">
+    <div class="container pt-4" *ngIf="showDetails">
+        <div class="row">
+            <div class="col-1 ml-10">
+                <h5 class="font-weight-600">
+                    <img class="mr-2 view-user-details-icon" src="assets/images/View_Details_User_Group.svg">
+                    </h5><br>
+            </div>
+            <div class="col-11">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5><b>{{customer.first_name}} {{customer.last_name}}</b></h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-4"><span><i class="bi bi-person"></i> {{customer.username}}</span></div>
+                                <div class="col-4"><span><i class="bi bi-envelope"></i> {{customer.email}}</span></div>
+                                <div class="col-4"><span><i class="bi bi-telephone"></i> {{customer.phone}}</span></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-2">
+                            <button class="btn btn-outline-secondary"><i class="bi bi-pencil-square"></i> Edit</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-outline-danger"><i class="bi bi-trash mr-2"></i> Delete Customer</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <h5><b>Personal Details</b></h5>
+            </div>
+        </div>
+        <div class="row m-2 gx-5">
+            <div class="col-3">
+                <div class="row bg-card">
+                    <span>First Name</span>
+                    <h6><b>{{customer.first_name}}</b></h6>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row bg-card">
+                    <span>Last Name</span>
+                    <h6><b>{{customer.last_name}}</b></h6>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row bg-card">
+                    <span>Gender</span>
+                    <h6><b>{{customer.gender}}</b></h6>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row bg-card">
+                    <span>Date of Birth</span>
+                    <h6><b>{{customer.dob | date}}</b></h6>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-12">
+                <h5><b>Address</b></h5>
+            </div>
+        </div>
+        <div class="row m-3 gx-5">
+            <div class="col-3 bg-card">Address</div>
+            <div class="col-3 bg-card text-right">{{customer.address}}</div>
+        </div>
+        <div class="row m-3 gx-5">
+            <div class="col-3 bg-card">City</div>
+            <div class="col-3 bg-card text-right">{{customer.city}}</div>
+        </div>
+        <div class="row m-3 gx-5">
+            <div class="col-3 bg-card">State</div>
+            <div class="col-3 bg-card text-right">{{customer.state}}</div>
+        </div>
+        <div class="row m-3 gx-5">
+            <div class="col-3 bg-card">Zip Code</div>
+            <div class="col-3 bg-card text-right">{{customer.zipcode}}</div>
+        </div>
+    </div>
+
+    <!-- Add Customer -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">New Customer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form role="form" [formGroup]="customerDetails" novalidate class="border-bottom-0 w-100 comp-height-form">
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['username'].hasError('required') || customerDetails.controls['username'].hasError('whitespace') ) && customerDetails.controls['username'].touched}">
+                            <span class="form-error text-danger" *ngIf="( customerDetails.controls['username'].hasError('required') || customerDetails.controls['username'].hasError('whitespace') ) && customerDetails.controls['username'].touched">Username is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="username" required
+                            placeholder="Username*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['username'].hasError('required') && customerDetails.controls['username'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                    [ngClass]="{'error': ( customerDetails.controls['email'].hasError('required') || customerDetails.controls['email'].hasError('whitespace') ) && customerDetails.controls['email'].touched}">
+                    <span class="form-error text-danger" *ngIf="( customerDetails.controls['email'].hasError('required') || customerDetails.controls['email'].hasError('whitespace') ) && customerDetails.controls['email'].touched">Email is required</span>
+                    <input class="form-control" type="text text-capitalize" formControlName="email" required
+                        placeholder="Email*"
+                        [ngClass]="{'is-invalid': customerDetails.controls['email'].hasError('required') && customerDetails.controls['email'].touched}" />
+                </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['first_name'].hasError('required') || customerDetails.controls['first_name'].hasError('whitespace') ) && customerDetails.controls['first_name'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['first_name'].hasError('required') || customerDetails.controls['first_name'].hasError('whitespace') ) && customerDetails.controls['first_name'].touched">First Name is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="first_name" required
+                            placeholder="First Name*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['first_name'].hasError('required') && customerDetails.controls['first_name'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['last_name'].hasError('required') || customerDetails.controls['last_name'].hasError('whitespace') ) && customerDetails.controls['last_name'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['last_name'].hasError('required') || customerDetails.controls['last_name'].hasError('whitespace') ) && customerDetails.controls['last_name'].touched">Last Name is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="last_name" required
+                            placeholder="Last Name*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['last_name'].hasError('required') && customerDetails.controls['last_name'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['password'].hasError('required') || customerDetails.controls['password'].hasError('whitespace') ) && customerDetails.controls['password'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['password'].hasError('required') || customerDetails.controls['password'].hasError('whitespace') ) && customerDetails.controls['password'].touched">Password is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="password" required
+                            placeholder="Password*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['password'].hasError('required') && customerDetails.controls['password'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['confirm_password'].hasError('required') || customerDetails.controls['confirm_password'].hasError('whitespace') ) && customerDetails.controls['confirm_password'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['confirm_password'].hasError('required') || customerDetails.controls['confirm_password'].hasError('whitespace') ) && customerDetails.controls['confirm_password'].touched">Confirm Password is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="password" required
+                            placeholder="Confirm Password*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['confirm_password'].hasError('required') && customerDetails.controls['confirm_password'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['address'].hasError('required') || customerDetails.controls['address'].hasError('whitespace') ) && customerDetails.controls['address'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['address'].hasError('required') || customerDetails.controls['address'].hasError('whitespace') ) && customerDetails.controls['address'].touched">Address is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="address" required
+                            placeholder="Address*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['address'].hasError('required') && customerDetails.controls['address'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['country'].hasError('required') || customerDetails.controls['country'].hasError('whitespace') ) && customerDetails.controls['country'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['country'].hasError('required') || customerDetails.controls['country'].hasError('whitespace') ) && customerDetails.controls['country'].touched">Country is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="country" required
+                            placeholder="Country*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['country'].hasError('required') && customerDetails.controls['country'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['state'].hasError('required') || customerDetails.controls['state'].hasError('whitespace') ) && customerDetails.controls['state'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['state'].hasError('required') || customerDetails.controls['state'].hasError('whitespace') ) && customerDetails.controls['state'].touched">State is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="state" required
+                            placeholder="State*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['state'].hasError('required') && customerDetails.controls['state'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['city'].hasError('required') || customerDetails.controls['city'].hasError('whitespace') ) && customerDetails.controls['city'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['city'].hasError('required') || customerDetails.controls['city'].hasError('whitespace') ) && customerDetails.controls['city'].touched">City is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="city" required
+                            placeholder="City*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['city'].hasError('required') && customerDetails.controls['city'].touched}" />
+                    </div>
+                    <div class="form-group mt-2"
+                        [ngClass]="{'error': ( customerDetails.controls['zipcode'].hasError('required') || customerDetails.controls['zipcode'].hasError('whitespace') ) && customerDetails.controls['zipcode'].touched}">
+                        <span class="form-error text-danger" *ngIf="( customerDetails.controls['zipcode'].hasError('required') || customerDetails.controls['zipcode'].hasError('whitespace') ) && customerDetails.controls['zipcode'].touched">Zipcode is required</span>
+                        <input class="form-control" type="text text-capitalize" formControlName="zipcode" required
+                            placeholder="Zip Code*"
+                            [ngClass]="{'is-invalid': customerDetails.controls['zipcode'].hasError('required') && customerDetails.controls['zipcode'].touched}" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" (click)="addCustomer()">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- <div class="slicker">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+            *ngIf="slideConfig.step > -1">
+            <div ngxSlickItem class="slide p-0">
+                <div class="sbody  right-slider">
+                    <h1>Hhsgfd</h1>
+                <div class="sfoot">
+                    <button class="btn btn-secondary"
+                        (click)="sliderClose($event); closeAddContentPopupContent();"
+                        title="Cancel">Cancel</button>
+                    <button class="btn btn-primary" (click)="loadNextStep(0, slickModal);"
+                        title="Proceed" [disabled]="(isNext == false)">
+                        Proceed
+                    </button>
+                </div>
+            </div>
+            <div ngxSlickItem class="slide p-0">
+                <div class="sbody right-slider">
+                    <h1>H111</h1>
+                </div>
+                <div class="sfoot">
+                    <button class="btn btn-secondary"
+                        (click)="sliderClose($event);closeAddContentPopupContent()"
+                        title="Cancel">Cancel</button>
+                    <button class="btn btn-secondary" (click)="loadPreviousStep(1, slickModal)"
+                        title="Previous">Previous</button>
+                    <button class="btn btn-primary" (click)="loadNextStep(1, slickModal)" 
+                        (click)="addCustomer()" title="Save">Save</button>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div> -->
+    
+  </main>
+  <!--Main layout-->
+  
